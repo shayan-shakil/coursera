@@ -3,42 +3,83 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		body	{
-			background-color: #D5EAFC;
-		}
-		h1	{
-			color: #336FB2;
-			text-align: center;
-			font-size: 75px;
-		}
-		h2	{
-			color: #77ADD9;
-			font-size: 30px;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	<title>Shayan's Website</title>
 </head>
 <body>
-	<h1>Welcome to Shayan's First Website</h1>
-	<h2 id="start">Contents Section</h2>
-	<p><a href="#section1">Section 1: About Me</a></p>
-	<p><a href="#section2">Section 2: News</a></p>
+	<h1 id="top">Shayan's First Website</h1>
+	<div class="topnav">
+	  <a class="active" href="#home">Home</a>
+	  <a href="#section1">Section 1</a>
+	  <a href="#section2">Section 2</a>
+	</div>
+	<br>
+	</div>
+	<div class="slideshow-container">
+	  <div class="mySlides fade">
+	    <img src="Resources/photo1.jpg" height=350px>
+	  </div>
+	  <div class="mySlides fade">
+	    <img src="Resources/photo2.jpg" height=350px>
+	  </div>
+	  <div class="mySlides fade">
+	    <img src="Resources/photo3.jpg" height=350px>
+	  </div>
+	  <script>
+			  	let slideIndex = 1;
+		showSlides(slideIndex);
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+		function showSlides(n) {
+		  let i;
+		  let slides = document.getElementsByClassName("mySlides");
+		  let dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		    slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		    dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		}
+	  </script>
+	  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+	<br>
+
+	<div style="text-align:center">
+	  <span class="dot" onclick="currentSlide(1)"></span>
+	  <span class="dot" onclick="currentSlide(2)"></span>
+	  <span class="dot" onclick="currentSlide(3)"></span>
+	</div>
 	<section id="section1">
 		<h2>Section 1</h1>
 		<p>My name is Shayan Shakil</h2>
 		<p>I was born in London and I moved to Scotland</p>
 		<p>I am 16 years old, lol, lol, lol ,lol. I&nbsp;love&nbsp;gaming</p>
-		<p><a href="#start">Back to Contents</a></p>
+		
+		<button class="btn"
+		onclick= "window.location.href='#top'">
+		Back to Home
+		</button>
 	</section>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	</p>
+	<img src="Resources/photo4.jpg" height=800px class="center">
 	<section id="section2">
 		<h2>Section 2</h1>
 		<a href="https://www.bbc.co.uk/news" target="_blank" title="Click here to see the news">BBC News</a>
 		<p>Around 08:00 on Tuesday, two policemen on motorcycles spotted a Mercedes with a Polish number plate driving fast in a bus lane, Nanterre prosecutor Pascal Prache told journalists. Turning on their siren, the officers caught up with the car at a traffic light. Three young men were inside. The officers told the driver to stop but the vehicle pulled away, ignoring the red light. The officers gave chase and notified their unit by radio. At 08:16, the Mercedes stopped in heavy traffic. Both officers got off their motorcycles, drew their weapons and approached the car. They later told prosecutors that they pointed their guns at the driver to "deter him from driving away again". They asked the driver to turn off the ignition, but the car moved forward. One of the officers fired, fatally wounding the young man in the chest. After the car ran into a roadside barrier, one of the passengers was arrested and the other fled on foot.
 		</p>
-		<p><a href="#start">Back to Contents</a></p>
+		<p><a href="#top">Back to Home</a></p>
 	</section>
 </body>
 </html>
