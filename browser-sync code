@@ -1,0 +1,3 @@
+cd \Users\44755\Documents\GitHub\coursera
+
+browser-sync start --server --directory --files "*"
